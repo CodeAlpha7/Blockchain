@@ -9,6 +9,6 @@
    - Dual implementation on centralized and decentralized storage options.
    - AWS S3 (Centralized) and IPFS (Decentralized). <br><br>
   
-### 3. Buzzcoin-part1 - Ethereum and web3.py
+### 3. Buzzcoin-part1 - Interact with deployed Contract (Web3.py)
    - Interact with a pre-deployed smart contract on a privately hosted Ethereum Chain.
-   - Solve puzzles to call contract methods and interact with blockchain. <br><br>
+   - Solve puzzles to call contract methods and interact with blockchain to earn crypto.
