@@ -12,3 +12,8 @@
 ### 3. Buzzcoin-part1 - Interact with deployed Contract (Web3.py)
    - Interact with a pre-deployed smart contract on a privately hosted Ethereum Chain.
    - Solve puzzles to call contract methods and interact with blockchain to earn crypto.
+
+### 4. Hierarchical Blockchain - Customizable Blockchain (JavaScript)
+   - Scalability-focused fully-customizable Hierarchical Blockchain built from scratch
+   - Layer 1 (L1) scalability solution with plug and play interfaces
+   - Block explorer and Postman-based APIs
