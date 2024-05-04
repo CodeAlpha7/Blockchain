@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPFS File Verification System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Add your CSS here */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #23d5ab, #23a6d5, #e58fd9, #ee7752);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6); /* Updated transparency here */
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            padding: 2em;
+            width: 600px;
+            max-width: 90%;
+            animation: fadeIn 1s ease;
+        }
+        #header h1 {
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1em;
+            animation: slideInDown 1s ease;
+        }
+        #content {
+            animation: fadeIn 2s ease;
+        }
+        #content h2 {
+            color: #50b3a2;
+        }
+        #content p {
+            font-size: 18px;
+        }
+        #content a {
+            color: #e8491d;
+            transition: color 0.5s ease;
+        }
+        #content a:hover {
+            color: #23d5ab;
+        }
+        @keyframes slideInDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <h1>File Uploaded!</h1>
+        </header>
+        <div id="content">
+            <h2>Name: <%= fileName %></h2>
+            <p>Link: <a href="https://ipfs.io/ipfs/<%= fileHash %>"><%= fileHash %></a></p>
+        </div>
+    </div>
+    <script>
+        document.querySelector('a').addEventListener('click', function(e) {
+            const link = this;
+            link.textContent = 'Loading...';
+            setTimeout(() => location.href = this.href, 2000);
+        });
+    </script>
+</body>
+</html>

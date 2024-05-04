@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPFS File Verification System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Add your CSS here */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #23d5ab, #23a6d5, #e58fd9, #ee7752);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6); /* Updated transparency here */
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            padding: 2em;
+            width: 600px;
+            max-width: 90%;
+            animation: fadeIn 1.5s ease;
+        }
+        #header h1 {
+            font-size: 1.7em;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 1em;
+            animation: slideInDown 2.2s ease;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form input[type="text"],
+        form input[type="file"] {
+            margin-top: 1.3em;
+            padding: 0.5em;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            transition: background-color 1s ease;
+        }
+        form input[type="submit"] {
+            margin-top: 1em;
+            padding: 0.5em 2em;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            background: #50b3a2;
+            cursor: pointer;
+            transition: background 0.5s ease;
+        }
+        form input[type="submit"]:hover {
+            background: #248674;
+        }
+        @keyframes slideInDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <h1>Upload File to IPFS</h1>
+        </header>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="text" name="FileName" placeholder="Enter File Name">
+            <input type="file" name="file">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('input[type="submit"]');
+            submitBtn.value = 'Uploading...';
+            submitBtn.disabled = true;
+            setTimeout(() => submitBtn.disabled = false, 2000); // Re-enable after 2 seconds
+        });
+    </script>
+</body>
+</html>
